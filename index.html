@@ -17,7 +17,11 @@
     </table>
   </body>
   <script>
-      document.getElementById("bid").innerHTML = 
-      "The full URL of this page is:<br>" + window.location.href;
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      var bid = urlParams.get('bid')
+
+      document.getElementById('bid').innerHTML = bid;
   </script>
 </html>
