@@ -7,7 +7,7 @@
       Bolt record example
     </h1>
     <h2>
-      Bolt Id <span>B01234</span>
+      Bolt Id <span id="bid">B01234</span>
     </h2>
     <table>
       <th>
@@ -16,4 +16,8 @@
     <td>Batch</td></th>
     </table>
   </body>
+  <script>
+      document.getElementById("bid").innerHTML = 
+      "The full URL of this page is:<br>" + window.location.href;
+  </script>
 </html>
