@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Boltr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <h1>
@@ -10,18 +11,42 @@
       Bolt Id <span id="bid">B01234</span>
     </h2>
     <table>
-      <th>
-      <td>Dimension</td>
-    <td>Material</td>
-    <td>Batch</td></th>
-    </table>
-  </body>
+        <tr>
+            <th>Bolt ID</th>
+            <th>Dimension</th>
+            <th>Material</th>
+            <th>Length</th>
+            <th>Workorder</th>
+            
+        </tr>
   <script>
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
+      let bolts = {"001": {
+                      "bid": "001",
+                      "dimension": "M16",
+                      "material": "A4-80",
+                      "length": "40mm",
+                      "installed": "2023-11-03",
+                      "workworder": "26315246"},
+                  "002": {
+                      "bid": "002",
+                      "dimension": "M16",
+                      "material": "8.8U Galv",
+                      "length": "25mm",
+                      "installed": "2023-12-24",
+                      "workworder": "26315642"}
+                  };
 
-      var bid = urlParams.get('bid')
+                  var bid = urlParams.get('bid')
+
+      if (bid == '001') {
+        document.write("<tr><td>" + bolts["001"].bid + "</td><td>" + bolts["001"].dimension + "</td><td>" + bolts["001"].material + "</td><td>" + bolts["001"].length + "</td><td>" + bolts["001"].workworder + "</td></tr>");
+      } else {
+        document.write("<tr><td>" + bolts["001"].bid + "</td><td>" + bolts["002"].dimension + "</td><td>" + bolts["002"].material + "</td><td>" + bolts["002"].length + "</td><td>" + bolts["002"].workworder + "</td></tr>");
+      }
 
       document.getElementById('bid').innerHTML = bid;
   </script>
+    </table>
 </html>
